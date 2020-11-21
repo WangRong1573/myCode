@@ -11,11 +11,16 @@ def home(request):
 
 
 def login(request):
-    username = request.POST.get('username')
-    pwd = request.POST.get('pwd')
-    if username == 'admin' and pwd == '123456':
-        return render(request,'home.html',context={'msg':'恭喜登录成功'})
-    return render(request, 'home.html', context={'msg': '用户名或密码错误'})
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        pwd = request.POST.get('pwd')
+        if username == 'admin' and pwd == '123456':
+            return render(request, 'home.html', context={'msg': '恭喜登录成功'})
+        return render(request, 'home.html', context={'msg': '用户名或密码错误'})
+    if request.method == 'GET':
+        username = request.GET.get('username')
+        pwd = request.GET.get('pwd')
+        return HttpResponse(f'你输入的用户名是：{username}，密码是：{pwd}')
     # '''
     # 请求方法：post
     # 参数类型：json
@@ -42,4 +47,3 @@ def login(request):
     #             return render(request, 'login.html', context={'msg': '用户名或密码错误'})
     # else:
     #     return HttpResponse('request method error')
-
