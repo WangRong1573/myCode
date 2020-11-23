@@ -29,3 +29,7 @@ class Test_Comm:
         """
         print('这是面向对象的封装')
         print('这是一个合规的测试用例')
+
+    def test_rerun(self):
+        print('测试重跑函数')
+        int('a')

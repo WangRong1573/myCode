@@ -1,4 +1,6 @@
 selenium
 pytest
 pytest-xdist
+# 失败重跑插件
+pytest-rerunfailures
 
