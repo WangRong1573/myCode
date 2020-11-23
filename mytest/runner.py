@@ -6,4 +6,5 @@
 import pytest
 
 # pytest.main(['-s', 'web自动化\\test_example1.py'])
-pytest.main(['-s', 'web自动化\\test_example1.py','--reruns','1'])
+# pytest.main(['-s', 'web自动化\\test_example1.py','--reruns','1'])
+pytest.main(['-s', 'web自动化\\test_example3.py', '-n', '3'])

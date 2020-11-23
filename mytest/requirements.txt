@@ -1,5 +1,6 @@
 selenium
 pytest
+# 多进程运行
 pytest-xdist
 # 失败重跑插件
 pytest-rerunfailures
