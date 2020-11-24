@@ -14,4 +14,5 @@ import pytest
 # pytest.main(['-s', 'web自动化\\test_example4.py','--alluredir','./temp'])
 # os.system('allure generate ./temp -o ./report --clean')
 # pytest.main(['-s', 'web自动化\\test_parameters.py','--alluredir','./temp'])
-pytest.main(['-s', 'web自动化\\test_PO.py','--alluredir','./temp'])
+# pytest.main(['-s', 'web自动化\\test_PO.py','--alluredir','./temp'])
+pytest.main(['-s', 'web自动化\\test_example6.py','--alluredir','./temp'])
