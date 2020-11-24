@@ -8,15 +8,30 @@
 import pytest
 
 
-def login(username,password):
-    if username == 'admin' and password== '123456':
+def my_sum(x, y):
+    return x + y
+
+
+def login(username, password):
+    if username == 'admin' and password == '123456':
         return 1
+
+
 class Test_Para:
     @pytest.mark.parametrize('username,password',
-                             [('admin','123456'),
-                                ('localhost','123'),
-                                 ('jack','000000')])
-    def test_login(self,username,password):
+                             [('admin', '123456'),
+                              ('localhost', '123'),
+                              ('jack', '000000')])
+    def test_login(self, username, password):
         print(f'测试数据为：{username}，{password}')
-        assert login(username,password) == 1
+        assert login(username, password) == 1
 
+    @pytest.mark.parametrize('x,y,z',[
+        (1,2,3),
+        (1,2,2),
+        (1,3,4),
+        (1,3,5)
+    ])
+    def test_my_sum(self,x,y,z):
+        print(f'测试场景为：{x}+{y}={z}')
+        assert x + y == z
