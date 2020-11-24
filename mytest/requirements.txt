@@ -5,3 +5,5 @@ pytest-xdist
 # 失败重跑插件
 pytest-rerunfailures
 
+# allure测试报告
+allure-pytest
