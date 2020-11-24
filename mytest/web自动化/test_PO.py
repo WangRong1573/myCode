@@ -8,12 +8,12 @@ import time
 from selenium import webdriver
 
 
-class Comm:
+class Test_Comm:
     """
     电商项目PO封装
     """
 
-    def __init__(self):
+    def setup_class(self):
         """
         构造函数，创建对象时候执行
         初始化浏览器
@@ -26,7 +26,7 @@ class Comm:
         # 窗口最大化
         self.driver.maximize_window()
 
-    def login(self):
+    def test_login(self):
         """
         登录用例
         :return:
@@ -41,7 +41,7 @@ class Comm:
 
         self.driver.find_element_by_class_name('J-login-submit').click()
 
-    def info(self):
+    def test_info(self):
         """
         需要登录成功
         :return:
@@ -62,11 +62,3 @@ class Comm:
         time.sleep(2)
 
         self.driver.find_element_by_class_name('saveBtn').click()
-
-
-if __name__ == '__main__':
-    comm = Comm()
-    comm.login()
-
-    # 上传头像
-    comm.info()
